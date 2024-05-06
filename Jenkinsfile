@@ -28,7 +28,7 @@ pipeline {
         stage('Docker Build Images') {
             steps {
                 script {
-                    sh 'docker build -t naresh2603/helm-rocket:v1 .'
+                    sh 'docker build -t gbgowtham/helm-rocket:v1 .'
                     sh 'docker images'
                 }
             }
@@ -37,9 +37,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
-                        sh "docker login -u naresh2603 -p ${dockerPassword}"
-                        sh 'docker push naresh2603/helm-rocket:v1'
-                        sh 'trivy image naresh2603/helm-rocket:v1 > scan.txt'
+                        sh "docker login -u gbgowtham -p ${dockerPassword}"
+                        sh 'docker push gbgowtham/helm-rocket:v1'
                     }
                 }
             }
