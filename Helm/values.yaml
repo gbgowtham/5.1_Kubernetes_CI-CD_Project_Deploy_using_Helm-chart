@@ -1,6 +1,6 @@
 #deployment.yaml
 #namespace: devops
-replicaCount: 1
+replicaCount: 2
 image:
   repository: naresh2603/helmrocket
   tag: v1
