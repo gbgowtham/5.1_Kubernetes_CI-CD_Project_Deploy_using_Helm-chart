@@ -4,7 +4,7 @@ pipeline {
         stage ('SCM checkout') {
             steps {
                 script{
-                     git credentialsId: 'git-cred', url: 'https://github.com/gbgowtham/ecr.git'
+                     git credentialsId: 'git-cred', url: 'https://github.com/gbgowtham/5.1_Kubernetes_CI-CD_Project_Deploy_using_Helm-chart.git'
                 }
             }
         }
